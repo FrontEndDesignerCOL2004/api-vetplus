@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://api-vetplus.onrender.com/api/planes",
+      "https://api-vetplus.onrender.com",
     ], // dominios permitidos
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
