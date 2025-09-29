@@ -2,12 +2,22 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./database";
 import planesRoutes from "./routes/planes.routes";
-// import mongoose from "mongoose";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
 
-// const MONGO_URI = process.env.MONGO_URI || "";
+// ✅ Configurar CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://api-vetplus.onrender.com/api/planes",
+    ], // dominios permitidos
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // Middlewares
 app.use(express.json());
